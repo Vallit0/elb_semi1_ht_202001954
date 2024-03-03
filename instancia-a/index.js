@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 8080;
 
 // Endpoint /check que retorna un código 200 (OK)
 app.get('/check', (req, res) => res.sendStatus(200));
@@ -14,4 +14,7 @@ app.get('/', (req, res) => {
   });
 });
 
-app.listen(port, () => console.log(`API #1 escuchando en http://localhost:${port}`));
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server running on port ${port}`);
+  });
+  
